@@ -1,6 +1,6 @@
 **PROJECT DESCRIPTION**
 
-In this project I developed a Full-Stack AI-Integrate Challenge PLatform that generates coding challenges.
+In this project I developed a Full-Stack AI-Integrate Challenge Platform that generates coding challenges.
 Each challenge is personalized and has a difficulty setting.
 Users can log-into their account where it will appear their history of the challenges.
 The login is protected by Clerk, that also links the user sessions and the data persistence tracking the challenges.
