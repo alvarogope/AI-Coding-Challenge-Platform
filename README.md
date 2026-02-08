@@ -2,8 +2,8 @@
 
 In this project I developed a Full-Stack AI-Integrate Challenge Platform that generates coding challenges.
 Each challenge is personalized and has a difficulty setting.
-Users can log-into their account where it will appear their history of the challenges.
-The login is protected by Clerk, that also links the user sessions and the data persistence tracking the challenges.
+Users can log-into their account where their challenge history will appear.
+The login is protected using Clerk Authentication, that also links the user sessions and the data persistence tracking the challenges.
 
 ---
 
