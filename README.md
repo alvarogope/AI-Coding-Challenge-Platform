@@ -124,7 +124,7 @@ ai-challenge-platform/
 
 ---
 
-## Future Improvements
+## Possible Future Improvements
 
 - [ ] Deploy to cloud (Railway for backend, Vercel for frontend)
 - [ ] Add a leaderboard to compare scores across users
