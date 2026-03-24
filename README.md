@@ -44,21 +44,21 @@ A full-stack AI-powered coding challenge platform. Users log in, select a diffic
 ```
 AI-Coding-Challenge-Platform/
 ├── backend/
-│   ├── server.py              # Entry point — starts Uvicorn
+│   ├── server.py              # Entry point - starts Uvicorn
 │   ├── pyproject.toml         # Python dependencies
 │   └── src/
-│       ├── app.py             # FastAPI app — CORS, routers
-│       ├── ai_generator.py    # OpenAI integration — challenge generation
+│       ├── app.py             # FastAPI app - CORS, routers
+│       ├── ai_generator.py    # OpenAI integration - challenge generation
 │       ├── utils.py           # Clerk request authentication helper
 │       ├── database/
 │       │   ├── models.py      # SQLAlchemy ORM models + DB setup
 │       │   └── db.py          # DB query functions
 │       └── routes/
 │           ├── challenge.py   # /api/generate-challenge, /api/my-history, /api/quota
-│           └── webhook.py     # /webhooks/clerk — user creation sync
+│           └── webhook.py     # /webhooks/clerk - user creation sync
 ├── frontend/
 │   └── src/
-│       ├── main.jsx           # App entry — ClerkProvider wrapper
+│       ├── main.jsx           # App entry - ClerkProvider wrapper
 │       ├── App.jsx            # Root component and routing
 │       ├── app.css            # Global styles
 │       ├── auth/
@@ -140,7 +140,7 @@ App available at `http://localhost:5173`
 | POST | `/api/generate-challenge` | Generate a new AI challenge `{"difficulty": "easy\|medium\|hard"}` |
 | GET | `/api/my-history` | Get the authenticated user's challenge history |
 | GET | `/api/quota` | Get the authenticated user's remaining daily quota |
-| POST | `/webhooks/clerk` | Clerk webhook — creates quota record on user sign-up |
+| POST | `/webhooks/clerk` | Clerk webhook - creates quota record on user sign-up |
  
 > All `/api/*` endpoints require a valid Clerk session token.
 
