@@ -1,4 +1,3 @@
-from urllib import request
 from fastapi import APIRouter, Request, HTTPException, Depends
 from sqlalchemy.orm import Session
 from ..database.db import create_challenge_quota
