@@ -4,8 +4,6 @@ from clerk_backend_api import Clerk
 from .routes import challenge, webhooks
 import os
 
-from src.routes import challenge
-
 clerk_sdk = Clerk(bearer_auth=os.getenv("CLERK_SECRET_KEY"))
 
 app = FastAPI()
@@ -14,7 +12,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=["http://localhost:5173", "http://localhost:5174"],
     allow_headers=["*"],
 )
 app.include_router(challenge.router, prefix="/api")
