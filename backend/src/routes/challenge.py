@@ -26,7 +26,7 @@ class ChallengeRequest(BaseModel):
 async def generate_challenge(request: ChallengeRequest, request_obj: Request, db: Session = Depends(get_db)):
     try:
         user_details = authenticate_and_get_user_details(request_obj)
-        user_id = user_details.get('user_id')
+        user_id = user_details.get('userid')
 
         quota = get_challenge_quota(db, user_id)
         if not quota:
@@ -68,7 +68,7 @@ async def generate_challenge(request: ChallengeRequest, request_obj: Request, db
 @router.get("/my-history")
 async def my_history(request: Request, db: Session = Depends(get_db)):
     user_details = authenticate_and_get_user_details(request)
-    user_id = user_details.get('user_id')
+    user_id = user_details.get('userid')
 
     challenges = get_user_challenges(db, user_id)
     return {"challenges": challenges}
@@ -76,7 +76,7 @@ async def my_history(request: Request, db: Session = Depends(get_db)):
 @router.get("/quota")
 async def get_quota(request: Request, db: Session = Depends(get_db)):
     user_details = authenticate_and_get_user_details(request)
-    user_id = user_details.get('user_id')
+    user_id = user_details.get('userid')
 
     quota = get_challenge_quota(db, user_id)
     if not quota:
