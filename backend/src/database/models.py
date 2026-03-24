@@ -19,7 +19,7 @@ class Challenge(Base):
     explanation = Column(String, nullable=False)
 
 
-class ChallengeQuta(Base):
+class ChallengeQuota(Base):
     __tablename__ = 'challenge_quotas'
 
     id = Column(Integer, primary_key=True)
@@ -30,7 +30,7 @@ class ChallengeQuta(Base):
 
 Base.metadata.create_all(engine)
 
-SessionLocal = sessionmaker(autocommite=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def get_db():
     db = SessionLocal()
