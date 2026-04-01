@@ -1,12 +1,14 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from clerk_backend_api import Clerk
-from .routes import challenge, webhook
+from fastapi.responses import JSONResponse
+from .routes import challenge, webhooks
 import os
 
-clerk_sdk = Clerk(bearer_auth=os.getenv("CLERK_SECRET_KEY"))
-
 app = FastAPI()
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(status_code=500, content={"detail": str(exc)})
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,4 +19,4 @@ app.add_middleware(
 )
 app.include_router(challenge.router, prefix="/api")
 
-app.include_router(webhook.router, prefix="/webhooks")
+app.include_router(webhooks.router, prefix="/webhooks")
